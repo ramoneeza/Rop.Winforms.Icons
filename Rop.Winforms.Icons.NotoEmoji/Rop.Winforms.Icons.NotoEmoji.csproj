@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net6.0-windows;net48</TargetFrameworks>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <Title>Rop.Winforms.Icons.NotoEmoji</Title>
+	  <RootNamespace>Rop.Winforms.Icons.NotoEmoji</RootNamespace>
+	  <LangVersion>10.0</LangVersion>
+	  <PackageTags>helper-classes;winform;icons;MaterialDesign</PackageTags>
+	  <Description>Noto Emoji Icon classes for Winforms</Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.12</Version>
+	  <Authors>Ramon Ordiales Plaza</Authors>
+	  <Company>Ramon Ordiales Plaza</Company>
+	  <Copyright>2022 Ramon Ordiales</Copyright>
+	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+	
+  </PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Packs\**" />
+		<EmbeddedResource Remove="Packs\**" />
+		<None Remove="Packs\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="NotoEmoji-Medium.ttf" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="NotoEmoji-Medium.ttf" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Rop.Winforms.Icons" Version="1.0.25" />
+	</ItemGroup>
+</Project>

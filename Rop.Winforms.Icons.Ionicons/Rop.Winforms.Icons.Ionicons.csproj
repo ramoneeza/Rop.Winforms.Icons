@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net6.0-windows;net48</TargetFrameworks>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <Title>Rop.Winforms.Icons.Ionicons</Title>
+	  <RootNamespace>Rop.Winforms.Icons.Ionicons</RootNamespace>
+	  <LangVersion>10.0</LangVersion>
+	  <PackageTags>helper-classes;winform;icons;Ionicons</PackageTags>
+	  <Description>Ionicons Icon classes for Winforms</Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.15</Version>
+	  <Authors>Ramon Ordiales Plaza</Authors>
+	  <Company>Ramon Ordiales Plaza</Company>
+	  <Copyright>2022 Ramon Ordiales</Copyright>
+	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ionicons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ionicons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rop.Winforms.Icons" Version="1.0.25" />
+  </ItemGroup>
+
+</Project>

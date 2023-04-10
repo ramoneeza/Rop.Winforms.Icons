@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rop.Winforms.DuotoneIcons.FontAwesone\Rop.Winforms.DuotoneIcons.FontAwesone.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.TTIcons.GoogleMaterial\Rop.Winforms.DuotoneIcons.GoogleMaterial.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.TTIcons\Rop.Winforms.DuotoneIcons.csproj" />
+  </ItemGroup>
+
+</Project>

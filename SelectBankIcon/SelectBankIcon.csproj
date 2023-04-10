@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rop.Winforms.Icons.FluentUI\Rop.Winforms.Icons.FluentUI.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.FontAwesone\Rop.Winforms.Icons.FontAwesone.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.GoogleMaterial\Rop.Winforms.Icons.GoogleMaterial.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.Ionicons\Rop.Winforms.Icons.Ionicons.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.MaterialDesign\Rop.Winforms.Icons.MaterialDesign.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.NotoEmoji\Rop.Winforms.Icons.NotoEmoji.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons.Panel\Rop.Winforms.Icons.Panel.csproj" />
+    <ProjectReference Include="..\Rop.Winforms.Icons\Rop.Winforms.Icons.csproj" />
+  </ItemGroup>
+
+</Project>

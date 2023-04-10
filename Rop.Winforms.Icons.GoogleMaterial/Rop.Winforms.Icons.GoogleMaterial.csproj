@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net48;net6.0-windows;</TargetFrameworks>
+		<UseWindowsForms>true</UseWindowsForms>
+		<Title>Rop.Winforms.Icons.GoogleMaterial</Title>
+		<RootNamespace>Rop.Winforms.Icons.GoogleMaterial</RootNamespace>
+		<LangVersion>10.0</LangVersion>
+		<PackageTags>helper-classes;winform;icons;GoogleMaterial</PackageTags>
+		<Description>Google Material Icons classes for Winforms</Description>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.0.10</Version>
+		<Authors>Ramon Ordiales Plaza</Authors>
+		<Company>Ramon Ordiales Plaza</Company>
+		<Copyright>2022 Ramon Ordiales</Copyright>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Packs\**" />
+		<EmbeddedResource Remove="Packs\**" />
+		<None Remove="Packs\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="MaterialIcons-Regular.ttf" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="MaterialIcons-Regular.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Rop.Winforms.Icons" Version="1.0.25" />
+	</ItemGroup>
+
+</Project>
