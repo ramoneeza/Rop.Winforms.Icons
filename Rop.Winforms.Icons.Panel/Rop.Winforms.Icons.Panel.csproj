@@ -21,6 +21,6 @@
 		<None Remove="Packs\**" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\Rop.Winforms.Icons\Rop.Winforms.Icons.csproj" />
+	  <PackageReference Include="Rop.Winforms.Icons" Version="1.0.26" />
 	</ItemGroup>
 </Project>

@@ -5,10 +5,10 @@
 		<Title>Rop.Winforms.DuoToneIcons</Title>
 		<RootNamespace>Rop.Winforms.DuotoneIcons</RootNamespace>
 		<LangVersion>10.0</LangVersion>
-		<PackageTags>helper-classes;winform;icons;two-tone</PackageTags>
-		<Description>Two Tone Icon classes for Winforms</Description>
+		<PackageTags>helper-classes;winform;icons;two-tone;duotone</PackageTags>
+		<Description>DuoTone Icon classes for Winforms</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Ramon Ordiales Plaza</Authors>
 		<Company>Ramon Ordiales Plaza</Company>
 		<Copyright>2023 Ramon Ordiales</Copyright>
@@ -20,8 +20,5 @@
 		<Compile Remove="Packs\**" />
 		<EmbeddedResource Remove="Packs\**" />
 		<None Remove="Packs\**" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\Rop.Bitmap.2b\Rop.Bitmap2b.csproj" />
 	</ItemGroup>
 </Project>

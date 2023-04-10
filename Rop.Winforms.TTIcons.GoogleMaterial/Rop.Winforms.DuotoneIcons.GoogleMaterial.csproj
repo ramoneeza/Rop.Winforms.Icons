@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rop.Winforms.TTIcons\Rop.Winforms.DuotoneIcons.csproj" />
+    <PackageReference Include="Rop.Winforms.DuotoneIcons" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

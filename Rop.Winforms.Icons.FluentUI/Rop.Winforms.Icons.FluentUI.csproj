@@ -9,7 +9,7 @@
 	  <PackageTags>helper-classes;winform;icons;FluentUI</PackageTags>
 	  <Description>FluentUI Icon classes for Winforms</Description>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.11</Version>
+	  <Version>1.0.12</Version>
 	  <Authors>Ramon Ordiales Plaza</Authors>
 	  <Company>Ramon Ordiales Plaza</Company>
 	  <Copyright>2022 Ramon Ordiales</Copyright>
@@ -27,7 +27,7 @@
     <EmbeddedResource Include="FluentSystemIcons-Regular.ttf" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Rop.Winforms.Icons" Version="1.0.25" />
+		<PackageReference Include="Rop.Winforms.Icons" Version="1.0.26" />
 	</ItemGroup>
 
 </Project>

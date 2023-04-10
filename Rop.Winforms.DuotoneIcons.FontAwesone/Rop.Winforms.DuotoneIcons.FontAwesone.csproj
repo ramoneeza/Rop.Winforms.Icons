@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-windows;net48</TargetFrameworks>
@@ -28,6 +28,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Rop.Winforms.TTIcons\Rop.Winforms.DuotoneIcons.csproj" />
+	  <PackageReference Include="Rop.Winforms.DuotoneIcons" Version="1.0.2" />
 	</ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-windows;net48</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -8,7 +8,7 @@
 		<PackageTags>helper-classes;winform;icons</PackageTags>
 		<Description>Icon classes for Winforms</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.25</Version>
+		<Version>1.0.26</Version>
 		<Authors>Ramon Ordiales Plaza</Authors>
 		<Company>Ramon Ordiales Plaza</Company>
 		<Copyright>2022 Ramon Ordiales</Copyright>

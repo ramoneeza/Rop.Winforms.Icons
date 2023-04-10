@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net48;net6.0-windows;</TargetFrameworks>
@@ -9,7 +9,7 @@
 		<PackageTags>helper-classes;winform;icons;GoogleMaterial</PackageTags>
 		<Description>Google Material Icons classes for Winforms</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.10</Version>
+		<Version>1.0.11</Version>
 		<Authors>Ramon Ordiales Plaza</Authors>
 		<Company>Ramon Ordiales Plaza</Company>
 		<Copyright>2022 Ramon Ordiales</Copyright>
@@ -30,7 +30,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Rop.Winforms.Icons" Version="1.0.25" />
+		<PackageReference Include="Rop.Winforms.Icons" Version="1.0.26" />
 	</ItemGroup>
 
 </Project>
