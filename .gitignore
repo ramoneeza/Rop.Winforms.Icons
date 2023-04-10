@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /SelectTwoToneBankIcon/SelectDuotoneBankIcon.csproj
+/Rop.Winforms.TTIcons.GoogleMaterialBuild/Rop.Winforms.DuotoneIcons.GoogleMaterialBuild.csproj
+/Rop.Winforms.DuotoneIcons.FontAwesoneBuild/Rop.Winforms.DuotoneIcons.FontAwesoneBuild.csproj
+/DoubleColorIcon/DoubleColorIcon.csproj
