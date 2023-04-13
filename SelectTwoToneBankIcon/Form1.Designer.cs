@@ -241,7 +241,7 @@
             // 
             cbBank.DropDownStyle = ComboBoxStyle.DropDownList;
             cbBank.FormattingEnabled = true;
-            cbBank.Items.AddRange(new object[] { "GoogleMaterial", "FontAwesone" });
+            cbBank.Items.AddRange(new object[] { "GoogleMaterial", "FontAwesone", "MaterialDesign" });
             cbBank.Location = new Point(522, 73);
             cbBank.Margin = new Padding(2, 3, 2, 3);
             cbBank.Name = "cbBank";
@@ -275,7 +275,7 @@
             soloIcon.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             soloIcon.Location = new Point(748, 263);
             soloIcon.Name = "soloIcon";
-            soloIcon.Size = new Size(35, 35);
+            soloIcon.Size = new Size(17, 17);
             soloIcon.TabIndex = 44;
             // 
             // label3

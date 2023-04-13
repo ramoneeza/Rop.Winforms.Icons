@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+	<TargetFrameworks>net6.0-windows;net48</TargetFrameworks>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ImplicitUsings>disable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<LangVersion>10.0</LangVersion>
+	<PackageTags>helper-classes;winform;icons;two-tone</PackageTags>
+	<Description>Two Tone Icon classes for Winforms</Description>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Version>1.0.1</Version>
+	<Authors>Ramon Ordiales Plaza</Authors>
+	<Company>Ramon Ordiales Plaza</Company>
+	<Copyright>2023 Ramon Ordiales</Copyright>
+	<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+	<RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="mdcodes.txt" />
+    <None Remove="mdicons.bin" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="mdcodes.txt" />
+    <EmbeddedResource Include="mdicons.bin" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Rop.Winforms.DuotoneIcons" Version="1.0.2" />
+	</ItemGroup>
+</Project>

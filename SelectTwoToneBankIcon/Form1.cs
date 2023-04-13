@@ -4,6 +4,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using Rop.Winforms.DuotoneIcons;
 using Rop.Winforms.DuotoneIcons.FontAwesone;
+using Rop.Winforms.DuotoneIcons.MaterialDesign;
 using Rop.Winforms.TTIcons.GoogleMaterial;
 
 
@@ -38,7 +39,8 @@ namespace SelectTwoToneBankIcon
                 CurrentBank = (bname?.ToLower()) switch
                 {
                     "googlematerial" => CurrentBank = new GoogleMaterialBank(),
-                    "fontawesone"=> CurrentBank = new FontAwesoneBank(),    
+                    "fontawesone" => CurrentBank = new FontAwesoneBank(),
+                    "materialdesign"=>CurrentBank=new MaterialDesignBank(),
                     _ => null
                 };
                 _dwg = null;
