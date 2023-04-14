@@ -8,6 +8,7 @@ namespace Rop.Winforms.DuotoneIcons
     public struct DuoToneColor:IEquatable<DuoToneColor>
     {
         public static DuoToneColor Default=new DuoToneColor(Color.Black, Color.Gray);
+        public static DuoToneColor DefaultOneTone=new DuoToneColor(Color.Black, Color.Transparent);
         public static readonly DuoToneColor Empty=new DuoToneColor(Color.Empty, Color.Empty);
         public static readonly DuoToneColor Disabled=new DuoToneColor(Color.Gray, Color.Transparent);
         public DuoToneColor(Color color1, Color color2)
