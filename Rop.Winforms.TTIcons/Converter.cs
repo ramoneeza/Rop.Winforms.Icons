@@ -1,10 +1,8 @@
-﻿
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-
-namespace Rop.Bitmap2b
+namespace Rop.Winforms.DuotoneIcons
 {
     public static class Converter
     {

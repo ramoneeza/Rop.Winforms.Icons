@@ -114,7 +114,7 @@ public abstract class BaseEmbeddedIcons : IEmbeddedIcons
     private Bitmap IntGetBitmap(DuoToneIcon icon)
     {
         var size=icon.Size;
-        var bmp = Rop.Bitmap2b.Converter.From2bToBmp(icon.Data, icon.Size.Width, icon.Size.Height);
+        var bmp = Converter.From2bToBmp(icon.Data, icon.Size.Width, icon.Size.Height);
         //bmp.Save($"c:\\tmp\\{icon.Name}.test.png",ImageFormat.Png);
         return bmp;
     }
