@@ -1,10 +1,12 @@
-﻿using System.Drawing;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Rop.Winforms.DuotoneIcons;
-internal partial class dummy{}
-public  class IconIndexLabel : IconLabel
+
+internal partial class dummy
+{ }
+
+public class IconIndexLabel : IconLabel
 {
     public string[] Items { get; set; } = Array.Empty<string>();
     public string[] ToolTips { get; set; } = Array.Empty<string>();
@@ -12,11 +14,14 @@ public  class IconIndexLabel : IconLabel
     public string DefaultToolTip { get; set; } = "";
     public DuoToneColor[] ColorItems { get; set; } = Array.Empty<DuoToneColor>();
     private int _selectedIcon = -1;
+
     public event EventHandler SelectedIconChanged;
+
     public DuoToneColor DefaultColor { get; set; } = DuoToneColor.DefaultOneTone;
-    public DuoToneColor DisabledColor { get; set; }=DuoToneColor.Disabled;
+    public DuoToneColor DisabledColor { get; set; } = DuoToneColor.Disabled;
     public bool Disabled { get; set; }
     public bool ShowToolTip { get; set; }
+
     public string ToolTipText
     {
         get
@@ -26,15 +31,18 @@ public  class IconIndexLabel : IconLabel
             return ToolTips[SelectedIcon];
         }
     }
-    public override DuoToneColor IconColor {
-    get
+
+    public override DuoToneColor IconColor
     {
-        if (SelectedIcon == -1 || SelectedIcon>=ColorItems.Length) return DefaultColor;
-        if (Disabled) return DisabledColor;
-        return ColorItems[SelectedIcon];
+        get
+        {
+            if (SelectedIcon == -1 || SelectedIcon >= ColorItems.Length) return DefaultColor;
+            if (Disabled) return DisabledColor;
+            return ColorItems[SelectedIcon];
+        }
+        set { }
     }
-    set { }
-}
+
     public int SelectedIcon
     {
         get => _selectedIcon;
@@ -52,13 +60,12 @@ public  class IconIndexLabel : IconLabel
         }
     }
 
-    
     public string[] TextItems
     {
         get => _textItems;
         set
         {
-            _textItems = value; 
+            _textItems = value;
             Invalidate();
         }
     }
@@ -72,82 +79,81 @@ public  class IconIndexLabel : IconLabel
         }
     }
 
-private bool _useSuffix;
-private string[] _textItems = Array.Empty<string>();
+    private bool _useSuffix;
+    private string[] _textItems = Array.Empty<string>();
 
-public bool UseSuffix
-{
-    get => _useSuffix;
-    set
+    public bool UseSuffix
     {
-        if (_useSuffix == value) return;
-        base.PrefixCode = "";
-        base.SuffixCode = "";
-        _useSuffix = value;
-        SelectedIcon = -1;
+        get => _useSuffix;
+        set
+        {
+            if (_useSuffix == value) return;
+            base.PrefixCode = "";
+            base.SuffixCode = "";
+            _useSuffix = value;
+            SelectedIcon = -1;
+        }
     }
-}
-public string Code
-{
-    get => (UseSuffix) ? base.SuffixCode : base.PrefixCode;
-    private set
+
+    public string Code
     {
-        if (UseSuffix)
-            base.SuffixCode = value;
-        else
-            base.PrefixCode = value;
+        get => (UseSuffix) ? base.SuffixCode : base.PrefixCode;
+        private set
+        {
+            if (UseSuffix)
+                base.SuffixCode = value;
+            else
+                base.PrefixCode = value;
+        }
     }
-}
 
-public override string PrefixCode
-{
-    get => base.PrefixCode;
-    set
+    public override string PrefixCode
     {
-        if (UseSuffix) base.PrefixCode = value;
+        get => base.PrefixCode;
+        set
+        {
+            if (UseSuffix) base.PrefixCode = value;
+        }
     }
-}
 
-public override string SuffixCode
-{
-    get => base.SuffixCode;
-    set
+    public override string SuffixCode
     {
-        if (!UseSuffix) base.SuffixCode = value;
+        get => base.SuffixCode;
+        set
+        {
+            if (!UseSuffix) base.SuffixCode = value;
+        }
     }
-}
 
+    public override string Text
+    { get => base.Text; set { } }
 
-public override string Text { get => base.Text; set { } }
+    public void SetBoolIcon(bool? value)
+    {
+        SelectedIcon = (value is null) ? 2 : (value.Value ? 1 : 0);
+    }
 
-public void SetBoolIcon(bool? value)
-{
-    SelectedIcon = (value is null) ? 2 : (value.Value ? 1 : 0);
-}
+    public IconIndexLabel()
+    {
+    }
 
-public IconIndexLabel()
-{
+    protected override void OnMouseEnter(EventArgs e)
+    {
+        base.OnMouseEnter(e);
+        var s = ToolTipText;
+        if (string.IsNullOrEmpty(s)) s = null;
+        DoShowTooltip(s);
+    }
 
-}
+    protected void DoShowTooltip(string s)
+    {
+        if (ToolTip == null) return;
+        if (string.IsNullOrEmpty(s)) s = null;
+        ToolTip.SetToolTip(this, s);
+    }
 
-protected override void OnMouseEnter(EventArgs e)
-{
-    base.OnMouseEnter(e);
-    var s = ToolTipText;
-    if (string.IsNullOrEmpty(s)) s = null;
-    DoShowTooltip(s);
-}
-
-protected void DoShowTooltip(string s)
-{
-    if (ToolTip == null) return;
-    if (string.IsNullOrEmpty(s)) s = null;
-    ToolTip.SetToolTip(this,s);
-}
-
-protected override void OnMouseLeave(EventArgs e)
-{
-    DoShowTooltip(null);
-}
-
+    protected override void OnMouseLeave(EventArgs e)
+    {
+        DoShowTooltip(null);
+    }
 }

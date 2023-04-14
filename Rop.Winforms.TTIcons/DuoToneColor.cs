@@ -71,5 +71,10 @@ namespace Rop.Winforms.DuotoneIcons
         {
             return !a.Equals(b);
         }
+
+        public static DuoToneColor OneTone(Color color)
+        {
+            return new DuoToneColor(color, Color.Transparent);
+        }
     }
 }
