@@ -24,7 +24,6 @@ namespace Rop.Winforms.DuotoneIcons
         {
             if (!AutoSize) return base.GetPreferredSize(proposedSize);
             using var g = this.CreateGraphics();
-
             var args = GetIconStringArgs();
             var ft = FullText;
             if (ft == "") ft = " ";
@@ -33,7 +32,7 @@ namespace Rop.Winforms.DuotoneIcons
             var sf=measure.BoundsZero().Size;
             var w=1+sf.Width;
             var h = 1+sf.Height;
-            w += this.Padding.Horizontal+1f;
+            w += this.Padding.Horizontal+3f;
             h += this.Padding.Vertical+1f;
 
             var m=Math.Max(args.OffsetIcon,args.OffsetText);

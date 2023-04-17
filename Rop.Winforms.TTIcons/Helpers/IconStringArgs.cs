@@ -17,6 +17,7 @@ public class IconStringArgs : IconStringSizeArgs
         IconBank = args.IconBank;
         OffsetIcon = args.OffsetIcon;
         OffsetText = args.OffsetText;
+        UseAscent= args.UseAscent;
         if (args is IconStringArgs args2)
         {
             ForeColor = args2.ForeColor;

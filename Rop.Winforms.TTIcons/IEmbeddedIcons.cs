@@ -50,9 +50,9 @@ public interface IEmbeddedIcons
 
     float DrawTTIcon(Graphics gr,string code,DuoToneColor iconcolor, float x, float y, float height);
     void DrawTTIconFit(Graphics gr,string code,DuoToneColor iconcolor, float x, float y, float size);
-    SizeF MeasureIcon(string code, float height);
+    (float width,float height,float ascent) MeasureIcon(string code, float height);
 
-    RectangleF MeasureIcon(Graphics gr, string code, Font font, float scale);
+    RectangleF MeasureIcon(Graphics gr, string code, Font font, float scale,bool useascent);
 }
 public interface IBankIcon
 {

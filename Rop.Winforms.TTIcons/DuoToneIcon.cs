@@ -10,7 +10,8 @@ public class DuoToneIcon
     public byte[] Data { get; }
     public Size Size { get; }
     public float WidthUnit { get; }
-    public DuoToneIcon(string name, string theChar, int index,byte[] data,Size size)
+    public float AscentUnit { get; }
+    public DuoToneIcon(string name, string theChar, int index,byte[] data, Size size, float ascentUnit=1)
     {
         Name = name;
         TheChar = theChar;
@@ -18,5 +19,6 @@ public class DuoToneIcon
         Data = data;
         Size = size;
         WidthUnit = (float)size.Width / (float)size.Height;
+        AscentUnit = ascentUnit;
     }
 }

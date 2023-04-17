@@ -79,7 +79,7 @@ public class SoloIconLabel : Label
     {
         if (!AutoSize) return base.GetPreferredSize(proposedSize);
         using var g = CreateGraphics();
-        var sz = _bankIcon?.Bank.MeasureIcon(g, Code, Font, 1).Size ?? SizeF.Empty;
+        var sz = _bankIcon?.Bank.MeasureIcon(g, Code, Font, 1,false).Size ?? SizeF.Empty;
         if (sz == SizeF.Empty) sz = new SizeF(16, 16);
         sz = new SizeF(1 + sz.Width + Padding.Horizontal, 1 + sz.Height + Padding.Vertical);
         return new Size((int)sz.Width, (int)sz.Height);

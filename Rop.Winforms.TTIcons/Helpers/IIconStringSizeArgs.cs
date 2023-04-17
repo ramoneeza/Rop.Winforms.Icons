@@ -9,4 +9,5 @@ public interface IIconStringSizeArgs
     IEmbeddedIcons IconBank { get; set; }
     int OffsetIcon { get; set; }
     int OffsetText { get; set; }
+    bool UseAscent { get; set; }
 }

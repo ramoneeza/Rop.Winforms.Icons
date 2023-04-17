@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Rop.Winforms.DuotoneIcons;
@@ -10,7 +12,23 @@ public class SoloIconIndexLabel : SoloIconLabel
     public string[] ToolTips { get; set; } = Array.Empty<string>();
     public ToolTip ToolTip { get; set; }
     public string DefaultToolTip { get; set; } = "";
-    public DuoToneColor[] ColorItems { get; set; } = Array.Empty<DuoToneColor>();
+    private DuoToneColor[] _colorItems = Array.Empty<DuoToneColor>();
+    [Browsable(false)]
+    public DuoToneColor[] ColorItems
+    {
+        get => _colorItems;
+        set
+        {
+            _colorItems = value; 
+            Invalidate();
+        }
+    }
+
+    public string[] ColorItemsStr
+    {
+        get=>ColorItems.Select(x=>x.ToString()).ToArray();
+        set => ColorItems = value.Select(DuoToneColor.Parse).ToArray();
+    }
     private int _selectedIcon = -1;
     public event EventHandler SelectedIconChanged;
     public override Color ForeColor { get=>IconColor.Color1; set { } }
@@ -30,8 +48,8 @@ public class SoloIconIndexLabel : SoloIconLabel
     public virtual DuoToneColor IconColor {
         get
         {
-            if (SelectedIcon == -1 || SelectedIcon>=ColorItems.Length) return DefaultColor;
             if (Disabled) return DisabledColor;
+            if (SelectedIcon == -1 || SelectedIcon>=ColorItems.Length) return DefaultColor;
             return ColorItems[SelectedIcon];
         }
         set { }
@@ -52,6 +70,7 @@ public class SoloIconIndexLabel : SoloIconLabel
             SelectedIconChanged?.Invoke(this, EventArgs.Empty);
         }
     }
+    [Browsable(false)]
     public override string Text { get => base.Text; set { } }
     public override string Code
     {

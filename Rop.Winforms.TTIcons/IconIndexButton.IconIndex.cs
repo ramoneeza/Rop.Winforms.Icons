@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 
 namespace Rop.Winforms.DuotoneIcons;
 internal partial class dummy { }
@@ -18,6 +20,7 @@ public partial class IconIndexButton
             Invalidate();
         }
     }
+    [Browsable(false)]
     public DuoToneColor[] ColorItems
     {
         get => _colorItems;
@@ -26,6 +29,12 @@ public partial class IconIndexButton
             _colorItems = value;
             Invalidate();
         }
+    }
+
+    public string[] ColorItemsStr
+    {
+        get => ColorItems.Select(x => x.ToString()).ToArray();
+        set => ColorItems = value.Select(DuoToneColor.Parse).ToArray();
     }
 
     private bool _useSuffix;

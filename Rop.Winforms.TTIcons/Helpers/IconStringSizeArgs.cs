@@ -9,4 +9,5 @@ public class IconStringSizeArgs : IIconStringSizeArgs
     public IEmbeddedIcons IconBank { get; set; }
     public int OffsetIcon { get; set; }
     public int OffsetText { get; set; }
+    public bool UseAscent { get; set; }
 }

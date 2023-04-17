@@ -43,16 +43,16 @@ public static class EmbeddedFontHelper
         return new SizeF(graphics.PointsToPixels(sz.Width), graphics.PointsToPixels(sz.Height));
     }
 
-    public static RectangleF MeasureBaseIconPoints(this Font font, float scale)
+    public static RectangleF MeasureBaseIconPoints(this Font font, float scale,float iconascent)
     {
         var sz = MeasureBaseIconPoints(font);
-        var newh = sz.Height * scale;
+        var newh = sz.Height * scale * iconascent;
         return new RectangleF(0, sz.Height - newh, sz.Width * scale, newh);
     }
 
-    public static RectangleF MeasureBaseIcon(this Graphics g, Font font, float scale)
+    public static RectangleF MeasureBaseIcon(this Graphics g, Font font, float scale,float iconascent)
     {
-        var r = MeasureBaseIconPoints(font, scale);
+        var r = MeasureBaseIconPoints(font, scale,iconascent);
         return new Rectangle(g.PointsToPixels(r.Left), g.PointsToPixels(r.Top), g.PointsToPixels(r.Width), g.PointsToPixels(r.Height));
     }
 
@@ -102,7 +102,7 @@ public static class EmbeddedFontHelper
         float x = 0;
         float y = 0;
         float scale = args.Scale / 100f;
-        var baseicon = gr.MeasureBaseIcon(args.Font, scale);
+        var baseicon = gr.MeasureBaseIcon(args.Font, scale,1);
         var res = new List<(RectangleF, IconStringToken)>();
         var dif = (baseicon.Top >= 0) ? 0 : -baseicon.Top;
         foreach (var t in text)
@@ -110,10 +110,10 @@ public static class EmbeddedFontHelper
             var (u, cad) = t;
             if (u)
             {
-                var sz=bank.MeasureIcon(cad, baseicon.Height);
+                var (w,h,a)=bank.MeasureIcon(cad, baseicon.Height);
                 var m = baseicon;
-                var w= sz.Width;
-                res.Add((new RectangleF(x, y + args.OffsetIcon + dif + m.Top,w, m.Height), t));
+                var bl =(int)(args.UseAscent?(h - a):0);
+                res.Add((new RectangleF(x, y + args.OffsetIcon + dif + m.Top+bl,w, m.Height), t));
                 x += w;
             }
             else

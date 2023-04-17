@@ -261,14 +261,14 @@ namespace SelectTwoToneBankIcon
 
                 if (label == lc1)
                 {
-                    biglabel.IconColor = biglabel.IconColor with { Color1 = c };
+                    biglabel.IconColor = biglabel.IconColor.WithColor1(c);
                     soloIcon.Color = biglabel.IconColor;
                     btnIcon.IconColor = biglabel.IconColor;
                 }
 
                 if (label == lc2)
                 {
-                    biglabel.IconColor = biglabel.IconColor with { Color2 = c };
+                    biglabel.IconColor = biglabel.IconColor.WithColor2(c);
                     soloIcon.Color = biglabel.IconColor;
                     btnIcon.IconColor = biglabel.IconColor;
                 }

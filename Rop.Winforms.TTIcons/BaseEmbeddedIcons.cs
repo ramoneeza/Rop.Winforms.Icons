@@ -140,12 +140,13 @@ public abstract class BaseEmbeddedIcons : IEmbeddedIcons
         return GetBitmap(GetIcon(nameorcode),color);
     }
 
-    public SizeF MeasureIcon(string code, float height)
+    public (float width,float height,float ascent) MeasureIcon(string code, float height)
     {
         var icon = GetIcon(code);
-        if (icon == null) return SizeF.Empty;
-        var w= height * icon.WidthUnit;
-        return new SizeF(w, height);
+        if (icon == null) return (0,0,0);
+        var w = height * icon.WidthUnit;
+        var a = height * icon.AscentUnit;
+        return (w, height,a);
     }
 
     public float DrawTTIcon(Graphics gr,string code,DuoToneColor iconcolor, float x, float y, float height)
@@ -188,11 +189,12 @@ public abstract class BaseEmbeddedIcons : IEmbeddedIcons
         gr.InterpolationMode = a;
     }
 
-    public RectangleF MeasureIcon(Graphics gr, string code, Font font, float scale)
+    public RectangleF MeasureIcon(Graphics gr, string code, Font font, float scale,bool useascent)
     {
         var icon = GetIcon(code);
         if (icon == null) return RectangleF.Empty;
-        var b=gr.MeasureBaseIcon(font,scale);
+        var ascent=useascent?icon.AscentUnit:1;
+        var b=gr.MeasureBaseIcon(font,scale,ascent);
         return new RectangleF(b.Location,new SizeF(b.Height*icon.WidthUnit,b.Height));
     }
 
@@ -235,7 +237,8 @@ public abstract class BaseEmbeddedIcons : IEmbeddedIcons
             uint cu32 = (uint)(0x000F0000 + i);
             var ch = FromUTf32(cu32);
             var span = iconstream.ReadBytes(bytesize);
-            var icon = new DuoToneIcon(tt, ch, i, span,new Size(w,h));
+            // ReSharper disable once VirtualMemberCallInConstructor
+            var icon = FactoryDuoToneIcon(tt, ch, i, span,new Size(w,h));
             _icons[i] = icon;
             CharSet[tt] = icon;
             CharSet[ch] = icon;
@@ -249,6 +252,11 @@ public abstract class BaseEmbeddedIcons : IEmbeddedIcons
             char[] chars = Encoding.UTF32.GetChars(bytes);
             return new string(chars);
         }
+    }
+
+    protected virtual DuoToneIcon FactoryDuoToneIcon(string tt, string ch, int index, byte[] data, Size size)
+    {
+        return new DuoToneIcon(tt, ch, index, data, size);
     }
 
     private static byte[] GetResource(Type t, string name)

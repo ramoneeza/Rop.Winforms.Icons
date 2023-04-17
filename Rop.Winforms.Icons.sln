@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rop.Bitmap2b", "Rop.Bitmap.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rop.Winforms.DuotoneIcons.FontAwesone", "Rop.Winforms.DuotoneIcons.FontAwesone\Rop.Winforms.DuotoneIcons.FontAwesone.csproj", "{4E1A3681-ECEF-4564-9203-182B71CE6136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms.DuotoneIcons.MaterialDesignBuild", "Rop.Winforms.DuotoneIcons.MaterialDesignBuild\Rop.Winforms.DuotoneIcons.MaterialDesignBuild.csproj", "{04B99D88-FEE3-4228-96EB-D78813FFEE8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rop.Winforms.DuotoneIcons.MaterialDesignBuild", "Rop.Winforms.DuotoneIcons.MaterialDesignBuild\Rop.Winforms.DuotoneIcons.MaterialDesignBuild.csproj", "{04B99D88-FEE3-4228-96EB-D78813FFEE8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms.DuotoneIcons.MaterialDesign", "Rop.Winforms.DuotoneIcons.MaterialDesign\Rop.Winforms.DuotoneIcons.MaterialDesign.csproj", "{E85D7BF0-EE5D-446A-A5B5-D42ED0621615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rop.Winforms.DuotoneIcons.MaterialDesign", "Rop.Winforms.DuotoneIcons.MaterialDesign\Rop.Winforms.DuotoneIcons.MaterialDesign.csproj", "{E85D7BF0-EE5D-446A-A5B5-D42ED0621615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDuotone", "TestDuotone\TestDuotone.csproj", "{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,10 @@ Global
 		{E85D7BF0-EE5D-446A-A5B5-D42ED0621615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85D7BF0-EE5D-446A-A5B5-D42ED0621615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85D7BF0-EE5D-446A-A5B5-D42ED0621615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +139,7 @@ Global
 		{A607C50D-D8A7-483F-8BD8-EA0BF6F7096B} = {894F200B-286D-470D-9C4B-0E435BF61102}
 		{FA1AD793-BECE-49B8-B82A-6126204026CC} = {894F200B-286D-470D-9C4B-0E435BF61102}
 		{B737E2C2-F1A9-4194-A872-22BDDA1D73A1} = {894F200B-286D-470D-9C4B-0E435BF61102}
+		{5CA52842-4A3C-4ADA-826B-4F7A3449BCFB} = {894F200B-286D-470D-9C4B-0E435BF61102}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7B8EA66-21CF-4DAE-8873-1EEF4B002F7D}

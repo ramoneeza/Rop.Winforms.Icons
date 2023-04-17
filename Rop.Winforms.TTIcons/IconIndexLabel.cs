@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Rop.Winforms.DuotoneIcons;
@@ -12,7 +14,25 @@ public class IconIndexLabel : IconLabel
     public string[] ToolTips { get; set; } = Array.Empty<string>();
     public ToolTip ToolTip { get; set; }
     public string DefaultToolTip { get; set; } = "";
-    public DuoToneColor[] ColorItems { get; set; } = Array.Empty<DuoToneColor>();
+    private DuoToneColor[] _colorItems = Array.Empty<DuoToneColor>();
+
+    [Browsable(false)]
+    public DuoToneColor[] ColorItems
+    {
+        get => _colorItems;
+        set
+        {
+            _colorItems = value; 
+            Invalidate();
+        }
+    }
+
+    public string[] ColorItemsStr
+    {
+        get=>ColorItems.Select(x=>x.ToString()).ToArray();
+        set => ColorItems = value.Select(DuoToneColor.Parse).ToArray();
+    }
+
     private int _selectedIcon = -1;
 
     public event EventHandler SelectedIconChanged;
@@ -31,13 +51,13 @@ public class IconIndexLabel : IconLabel
             return ToolTips[SelectedIcon];
         }
     }
-
+    [Browsable(false)]
     public override DuoToneColor IconColor
     {
         get
         {
-            if (SelectedIcon == -1 || SelectedIcon >= ColorItems.Length) return DefaultColor;
             if (Disabled) return DisabledColor;
+            if (SelectedIcon == -1 || SelectedIcon >= ColorItems.Length) return DefaultColor;
             return ColorItems[SelectedIcon];
         }
         set { }
@@ -56,6 +76,7 @@ public class IconIndexLabel : IconLabel
                 code = Items[value];
             }
             Code = code;
+            Invalidate();
             SelectedIconChanged?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -70,11 +91,23 @@ public class IconIndexLabel : IconLabel
         }
     }
 
+    private string _defaultText="";
+
+    public string DefaultText
+    {
+        get => _defaultText;
+        set
+        {
+            _defaultText = value; 
+            Invalidate();
+        }
+    }
+
     public override string OnlyText
     {
         get
         {
-            if (SelectedIcon == -1 || SelectedIcon >= TextItems.Length) return base.OnlyText;
+            if (SelectedIcon == -1 || SelectedIcon >= TextItems.Length) return _defaultText;
             return TextItems[SelectedIcon];
         }
     }
@@ -124,7 +157,7 @@ public class IconIndexLabel : IconLabel
             if (!UseSuffix) base.SuffixCode = value;
         }
     }
-
+    [Browsable(false)]
     public override string Text
     { get => base.Text; set { } }
 

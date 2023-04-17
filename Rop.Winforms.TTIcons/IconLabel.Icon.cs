@@ -44,6 +44,7 @@ public partial class IconLabel:IHasIcons
 
     public void SetIcons(IEmbeddedIcons iconfont)
     {
+        if (iconfont == null) return;
         _icons = iconfont;
         AjFonts();
     }
@@ -135,6 +136,19 @@ public partial class IconLabel:IHasIcons
             AjFonts();
         }
     }
+
+    private bool _useAscent = false;
+
+    public bool UseAscent
+    {
+        get => _useAscent;
+        set
+        {
+            _useAscent = value;
+            AjFonts();
+        }
+    }
+
     protected override void OnFontChanged(EventArgs e)
     {
         AjFonts();
@@ -170,7 +184,8 @@ public partial class IconLabel:IHasIcons
             OffsetText = OffsetText,
             IconBank = _icons,
             Scale= IconScale,
-            Font=Font
+            Font=Font,
+            UseAscent=UseAscent,
         };
     }
 
