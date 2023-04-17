@@ -369,3 +369,7 @@ FodyWeavers.xsd
 /Rop.Winforms.DuotoneIcons.FontAwesoneBuild
 /Rop.Winforms.TTIcons.GoogleMaterialBuild
 /Rop.Winforms.DuotoneIcons.MaterialDesignBuild/Rop.Winforms.DuotoneIcons.MaterialDesignBuild.csproj
+/TestDuotone/TestDuotone.csproj
+/Rop.Winforms.TTIcons/publish.cmd
+/Rop.Winforms.TTIcons/publishpacks.cmd
+/Rop.Winforms.TTIcons/updatepacks.cmd
