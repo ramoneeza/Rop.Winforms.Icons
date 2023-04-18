@@ -25,7 +25,7 @@ namespace Rop.Winforms.DuotoneIcons
             if (!AutoSize) return base.GetPreferredSize(proposedSize);
             using var g = this.CreateGraphics();
             var args = GetIconStringArgs();
-            var ft = FullText;
+            var ft = GetFullText(true);
             if (ft == "") ft = " ";
             var text = ft.SplitIconString();
             var measure = g.MeasureIconString(text,args,_icons);

@@ -43,7 +43,7 @@ public class SoloIconLabel : Label
 
     private DuoToneColor _color = DuoToneColor.Default;
 
-    public DuoToneColor Color
+    public virtual DuoToneColor Color
     {
         get => _color;
         set
@@ -51,6 +51,26 @@ public class SoloIconLabel : Label
             _color = value;
             Invalidate();
         }
+    }
+
+    private DuoToneColor _disabledColor = DuoToneColor.Disabled;
+
+    public DuoToneColor DisabledColor
+    {
+        get => _disabledColor;
+        set
+        {
+            _disabledColor = value; 
+            Invalidate();
+        }
+    }
+
+    private bool _disabled;
+
+    public bool Disabled
+    {
+        get => _disabled;
+        set { _disabled = value; Invalidate();}
     }
 
     public SoloIconLabel() : base()
@@ -72,7 +92,8 @@ public class SoloIconLabel : Label
         var text = Code;
         var measure = e.Graphics.MeasureBaseIcon(Font);
         var offset = AlignOffset(new RectangleF(PointF.Empty, measure));
-        _icons?.DrawTTIcon(e.Graphics, Code, Color, offset.X, offset.Y, measure.Height);
+        var color = Disabled ? DisabledColor : Color;
+        _icons?.DrawTTIcon(e.Graphics, Code, color, offset.X, offset.Y, measure.Height);
     }
 
     public override Size GetPreferredSize(Size proposedSize)

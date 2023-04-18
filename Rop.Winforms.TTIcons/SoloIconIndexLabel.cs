@@ -31,10 +31,8 @@ public class SoloIconIndexLabel : SoloIconLabel
     }
     private int _selectedIcon = -1;
     public event EventHandler SelectedIconChanged;
-    public override Color ForeColor { get=>IconColor.Color1; set { } }
     public DuoToneColor DefaultColor { get; set; } = DuoToneColor.DefaultOneTone;
-    public DuoToneColor DisabledColor { get; set; }=DuoToneColor.Disabled;
-    public bool Disabled { get; set; }
+    
     public bool ShowToolTip { get; set; }
     public string ToolTipText
     {
@@ -45,10 +43,9 @@ public class SoloIconIndexLabel : SoloIconLabel
             return ToolTips[SelectedIcon];
         }
     }
-    public virtual DuoToneColor IconColor {
+    public override DuoToneColor Color {
         get
         {
-            if (Disabled) return DisabledColor;
             if (SelectedIcon == -1 || SelectedIcon>=ColorItems.Length) return DefaultColor;
             return ColorItems[SelectedIcon];
         }

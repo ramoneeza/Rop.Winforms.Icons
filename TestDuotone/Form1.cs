@@ -9,8 +9,7 @@ namespace TestDuotone
 
         private void button1_Click(object sender, EventArgs e)
         {
-            iconIndexLabel1.UseAscent = true;
-            propertyGrid1.SelectedObject = iconIndexLabel1;
+            propertyGrid1.SelectedObject = flwadtelefonomovil;
         }
     }
 }

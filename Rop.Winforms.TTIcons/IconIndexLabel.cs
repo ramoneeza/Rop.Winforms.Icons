@@ -10,12 +10,17 @@ internal partial class dummy
 
 public class IconIndexLabel : IconLabel
 {
-    public string[] Items { get; set; } = Array.Empty<string>();
+    private string[] _items = Array.Empty<string>();
+
+    public virtual string[] Items
+    {
+        get => _items;
+        set { _items = value; Invalidate();}
+    }
     public string[] ToolTips { get; set; } = Array.Empty<string>();
     public ToolTip ToolTip { get; set; }
     public string DefaultToolTip { get; set; } = "";
     private DuoToneColor[] _colorItems = Array.Empty<DuoToneColor>();
-
     [Browsable(false)]
     public DuoToneColor[] ColorItems
     {
@@ -27,7 +32,7 @@ public class IconIndexLabel : IconLabel
         }
     }
 
-    public string[] ColorItemsStr
+    public virtual string[] ColorItemsStr
     {
         get=>ColorItems.Select(x=>x.ToString()).ToArray();
         set => ColorItems = value.Select(DuoToneColor.Parse).ToArray();
@@ -103,14 +108,21 @@ public class IconIndexLabel : IconLabel
         }
     }
 
-    public override string OnlyText
+    protected override string GetOnlyText(bool tomeasure)
     {
-        get
+        if (!tomeasure)
         {
             if (SelectedIcon == -1 || SelectedIcon >= TextItems.Length) return _defaultText;
             return TextItems[SelectedIcon];
         }
+        var d=_defaultText??"";
+        foreach (var textItem in TextItems)
+        {
+            if (textItem.Length > d.Length) d = textItem;
+        }
+        return d;
     }
+
 
     private bool _useSuffix;
     private string[] _textItems = Array.Empty<string>();

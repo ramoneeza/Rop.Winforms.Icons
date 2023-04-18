@@ -11,7 +11,7 @@ public partial class IconIndexButton
     private DuoToneColor[] _colorItems = Array.Empty<DuoToneColor>();
     private int _selectedIcon = -1;
     public event EventHandler SelectedIconChanged;
-    public string[] Items
+    public virtual string[] Items
     {
         get => _items;
         set
@@ -31,7 +31,7 @@ public partial class IconIndexButton
         }
     }
 
-    public string[] ColorItemsStr
+    public virtual string[] ColorItemsStr
     {
         get => ColorItems.Select(x => x.ToString()).ToArray();
         set => ColorItems = value.Select(DuoToneColor.Parse).ToArray();

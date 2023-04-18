@@ -47,9 +47,6 @@ public partial class IconButton:IHasIcons
         AjFonts();
     }
 
-    public Font IconFont { get; private set; }
-
-
     public virtual DuoToneColor IconColor
     {
         get => _iconColor;

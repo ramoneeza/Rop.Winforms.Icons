@@ -72,10 +72,10 @@ public partial class IconLabel:IHasIcons
         }
     }
 
-    public virtual string OnlyText => Text;
+    public string OnlyText => GetOnlyText(false);
 
 
-    public virtual string FullText => $"{_icons?.GetChar(PrefixCode) ?? ""}{OnlyText}{_icons?.GetChar(SuffixCode) ?? ""}";
+    public string FullText => GetFullText(false);
 
     public virtual string PrefixCode
     {
@@ -189,7 +189,14 @@ public partial class IconLabel:IHasIcons
         };
     }
 
-   
 
-    
+    protected virtual string GetFullText(bool tomeasure)
+    {
+        return $"{_icons?.GetChar(PrefixCode) ?? ""}{GetOnlyText(tomeasure)}{_icons?.GetChar(SuffixCode) ?? ""}";
+    }
+
+    protected virtual string GetOnlyText(bool tomeasure)
+    {
+        return Text;
+    }
 }

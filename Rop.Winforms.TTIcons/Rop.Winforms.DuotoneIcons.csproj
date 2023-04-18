@@ -8,7 +8,7 @@
 		<PackageTags>helper-classes;winform;icons;two-tone;duotone</PackageTags>
 		<Description>DuoTone Icon classes for Winforms</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.19</Version>
+		<Version>1.0.26</Version>
 		<Authors>Ramon Ordiales Plaza</Authors>
 		<Company>Ramon Ordiales Plaza</Company>
 		<Copyright>2023 Ramon Ordiales</Copyright>
